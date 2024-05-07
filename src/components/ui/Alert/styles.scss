@@ -1,0 +1,32 @@
+// ** TYPES =>  Info, Error, Warning, and Success
+
+@mixin alert($name, $color, $bg, $borderColor) {
+  .#{$name} {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: $color;
+    background-color: $bg;
+    border: 1px solid $borderColor;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 16px 16px 8px;
+    font-weight: 500;
+
+    .alert-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .alert-title {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@include alert("info-alert", #bcc0ff, #646cff17, #646cff);
+@include alert("error-alert", #ffffff, #f3220f17, #ff6464);
+@include alert("warning-alert", #ffffff, #f3b60f17, #fffc64);
+@include alert("success-alert", #ffffff, #50f30f17, #4fec2c);
